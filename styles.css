@@ -279,7 +279,6 @@ body {
 }
 .window.focused { z-index: 55; }
 
-/* La fenêtre Projets a besoin de plus de place pour la grille de captures */
 #window-projects {
   width: 880px;
   max-width: 94vw;
@@ -394,7 +393,6 @@ body {
   align-self: flex-start;
 }
 
-/* Cadre "téléphone" : la capture entière reste visible, jamais recadrée */
 .project-shot {
   width: 100%;
   height: 300px;
@@ -445,7 +443,25 @@ body {
 }
 .btn-link:hover { background: var(--accent-light); }
 
-/* Ciel étoilé discret, pour le petit effet magique */
+.lock-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.85);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+}
+.about-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-light);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  margin-bottom: 4px;
+}
+
 .stars-layer {
   position: fixed;
   inset: 0;
@@ -466,7 +482,6 @@ body {
   50% { opacity: 0.85; transform: scale(1.6); }
 }
 
-/* Byte, le petit mascotte robot du portfolio */
 .mascot-widget {
   position: fixed;
   left: 20px;
@@ -531,7 +546,6 @@ body {
   transform: translateY(0) scale(1);
 }
 
-/* Petites particules de confettis a l'ouverture d'une fenetre */
 .sparkle-particle {
   position: fixed;
   z-index: 65;
