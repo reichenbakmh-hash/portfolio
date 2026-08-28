@@ -225,7 +225,14 @@ body {
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.35));
 }
 .dock-icon:hover {
-  transform: translateY(-10px) scale(1.25);
+  animation: dock-bounce 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes dock-bounce {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); }
+  30%  { transform: translateY(-14px) scale(1.28) rotate(-8deg); }
+  55%  { transform: translateY(-6px) scale(1.18) rotate(6deg); }
+  75%  { transform: translateY(-11px) scale(1.22) rotate(-3deg); }
+  100% { transform: translateY(-10px) scale(1.22) rotate(0deg); }
 }
 .dock-dot {
   position: absolute;
@@ -255,8 +262,8 @@ body {
   top: 90px;
   left: calc(50% - 260px);
   background: var(--window-bg);
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.5), 0 2px 0 rgba(255,255,255,0.04) inset;
   overflow: hidden;
   flex-direction: column;
   z-index: 50;
@@ -265,8 +272,21 @@ body {
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 .window.visible { display: flex; }
-.window.show { opacity: 1; transform: scale(1); }
+.window.show {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.32s ease, transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 .window.focused { z-index: 55; }
+
+/* La fenêtre Projets a besoin de plus de place pour la grille de captures */
+#window-projects {
+  width: 880px;
+  max-width: 94vw;
+  height: 78vh;
+  max-height: 780px;
+  left: calc(50% - 440px);
+}
 
 .window-titlebar {
   height: 38px;
@@ -337,32 +357,81 @@ body {
   margin-bottom: 14px;
 }
 
-.project { margin-bottom: 8px; }
-.project-image {
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  margin-bottom: 0;
+  background: #fff;
+  border: 1px solid #e4e9ed;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(20, 32, 44, 0.12);
+}
+
+.project h3 {
+  margin: 0;
+  padding: 12px 14px 0;
+  font-size: 14.5px;
+}
+.project p {
+  margin: 6px 0 0;
+  padding: 0 14px 14px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.project .btn-link {
+  margin: 0 14px 14px;
+  align-self: flex-start;
+}
+
+/* Cadre "téléphone" : la capture entière reste visible, jamais recadrée */
+.project-shot {
   width: 100%;
-  max-height: 220px;
-  object-fit: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(23,147,209,0.14), transparent 55%),
+    linear-gradient(160deg, #0f1822, #1c2b38);
+  padding: 14px 0;
+}
+.project-image {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
   display: block;
-  border-radius: 8px;
-  border: 1px solid rgba(23,147,209,0.25);
-  margin: 8px 0;
-  background: #eef2f5;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 .project-image.placeholder {
-  height: 130px;
+  width: 70%;
+  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: repeating-linear-gradient(
     45deg,
-    rgba(23,147,209,0.06),
-    rgba(23,147,209,0.06) 10px,
-    rgba(23,147,209,0.02) 10px,
-    rgba(23,147,209,0.02) 20px
+    rgba(23,147,209,0.12),
+    rgba(23,147,209,0.12) 10px,
+    rgba(23,147,209,0.05) 10px,
+    rgba(23,147,209,0.05) 20px
   );
-  border: 1px dashed rgba(23,147,209,0.35);
-  color: var(--accent);
+  border: 1px dashed rgba(23,147,209,0.45);
+  color: var(--accent-light);
   font-style: italic;
+  border-radius: 14px;
 }
 
 .btn-link {
@@ -376,6 +445,105 @@ body {
 }
 .btn-link:hover { background: var(--accent-light); }
 
+/* Ciel étoilé discret, pour le petit effet magique */
+.stars-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #eaf6ff;
+  opacity: 0.15;
+  animation: twinkle 3.6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.6); }
+}
+
+/* Byte, le petit mascotte robot du portfolio */
+.mascot-widget {
+  position: fixed;
+  left: 20px;
+  bottom: 96px;
+  width: 64px;
+  height: 70px;
+  z-index: 20;
+  cursor: pointer;
+  animation: mascot-float 3.2s ease-in-out infinite;
+}
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.mascot-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.45));
+}
+#mascot-eyes {
+  transform-origin: 60px 55px;
+  animation: mascot-blink 4.5s ease-in-out infinite;
+}
+@keyframes mascot-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.12); }
+}
+#mascot-arm {
+  transform-origin: 96px 68px;
+  animation: mascot-wave 2.6s ease-in-out infinite;
+}
+@keyframes mascot-wave {
+  0%, 20%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-22deg); }
+  40% { transform: rotate(0deg); }
+  50% { transform: rotate(-18deg); }
+  60% { transform: rotate(0deg); }
+}
+.mascot-widget:hover .mascot-svg { animation: none; }
+.mascot-widget:hover #mascot-arm { animation-duration: 0.7s; }
+
+.mascot-bubble {
+  position: absolute;
+  bottom: 84px;
+  left: -14px;
+  width: 200px;
+  background: rgba(255,255,255,0.97);
+  color: var(--text-dark);
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(6px) scale(0.94);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.mascot-widget:hover .mascot-bubble,
+.mascot-widget.show-bubble .mascot-bubble {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Petites particules de confettis a l'ouverture d'une fenetre */
+.sparkle-particle {
+  position: fixed;
+  z-index: 65;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle-pop 0.7s ease-out forwards;
+}
+@keyframes sparkle-pop {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.3); }
+}
+
 @media (max-width: 640px) {
   .desktop { top: 36px; right: 8px; gap: 12px; }
   .desktop-icon { width: 72px; }
@@ -385,9 +553,22 @@ body {
     top: 60px;
     height: 72vh;
   }
+  #window-projects {
+    width: 94vw;
+    left: 3vw;
+    height: 78vh;
+  }
+  .projects-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .project-shot { height: 220px; }
+  .mascot-widget { left: 10px; bottom: 76px; width: 48px; height: 52px; }
+  .mascot-bubble { width: 160px; font-size: 11px; left: -6px; bottom: 64px; }
   .menu-item:nth-child(3), .menu-item:nth-child(4) { display: none; }
   .dock-icon { width: 38px; height: 38px; }
   .dock-icon img { width: 26px; height: 26px; }
 }
 
-  
+@media (max-width: 420px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
+
