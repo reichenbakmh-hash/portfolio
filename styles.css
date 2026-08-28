@@ -145,17 +145,22 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 8px;
+  padding: 8px 6px;
+  border-radius: 10px;
   user-select: none;
+  background: rgba(10,16,26,0.38);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.14);
 }
 .desktop-icon:hover, .desktop-icon.selected {
-  background: rgba(255,255,255,0.15);
+  background: rgba(23,147,209,0.45);
+  border-color: rgba(255,255,255,0.3);
 }
 .desktop-icon img {
-  width: 38px;
-  height: 38px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
 .desktop-icon span {
   margin-top: 6px;
@@ -274,8 +279,21 @@ body {
   user-select: none;
 }
 .traffic-lights { display: flex; gap: 8px; margin-right: 12px; }
-.tl { width: 12px; height: 12px; border-radius: 50%; cursor: pointer; }
-.tl-close { background: #ff5f57; }
+.tl {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(0,0,0,0);
+}
+.tl-close { background: #ff5f57; color: rgba(96,10,6,0.75); }
+.tl-close::before { content: "\2715"; }
 .tl-min { background: #febc2e; }
 .tl-max { background: #28c840; }
 .window-title {
@@ -372,3 +390,4 @@ body {
   .dock-icon img { width: 26px; height: 26px; }
 }
 
+  
