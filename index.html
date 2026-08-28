@@ -69,6 +69,8 @@
     </div>
   </div>
 
+  <div class="stars-layer" id="stars-layer"></div>
+
   <div class="context-menu" id="context-menu">
     <div class="context-item" data-action="refresh">Actualiser le bureau</div>
     <div class="context-item" data-action="arrange">Réorganiser les icônes</div>
@@ -104,6 +106,35 @@
     <div class="dock-icon" id="dock-power" title="Verrouiller">
       <img src="pic/power.svg" alt="Verrouiller" />
     </div>
+  </div>
+
+  <div class="mascot-widget" id="mascot-widget" title="Byte, l'assistant du portfolio">
+    <div class="mascot-bubble" id="mascot-bubble">Salut, moi c'est Byte 👋 Bienvenue sur le portfolio de Daniel&nbsp;!</div>
+    <svg viewBox="0 0 120 130" class="mascot-svg" id="mascot-svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4fb3e8"/>
+          <stop offset="100%" stop-color="#1793d1"/>
+        </linearGradient>
+      </defs>
+      <line x1="60" y1="10" x2="60" y2="22" stroke="#a9c4d4" stroke-width="3" stroke-linecap="round"/>
+      <circle id="antenna-tip" cx="60" cy="8" r="5" fill="#ff8a65"/>
+      <rect x="14" y="66" width="10" height="24" rx="5" fill="url(#bodyGrad)"/>
+      <g id="mascot-arm">
+        <rect x="91" y="52" width="10" height="30" rx="5" fill="url(#bodyGrad)"/>
+      </g>
+      <rect x="20" y="22" width="80" height="70" rx="26" fill="url(#bodyGrad)"/>
+      <rect x="30" y="34" width="60" height="42" rx="18" fill="#0f1b26"/>
+      <g id="mascot-eyes">
+        <circle cx="49" cy="55" r="6" fill="#eaf6ff"/>
+        <circle cx="71" cy="55" r="6" fill="#eaf6ff"/>
+      </g>
+      <path d="M48 65 Q60 74 72 65" stroke="#eaf6ff" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="38" cy="63" r="4" fill="#ff8a65" opacity="0.55"/>
+      <circle cx="82" cy="63" r="4" fill="#ff8a65" opacity="0.55"/>
+      <rect x="38" y="92" width="12" height="16" rx="6" fill="#123043"/>
+      <rect x="70" y="92" width="12" height="16" rx="6" fill="#123043"/>
+    </svg>
   </div>
 
   <div class="window" id="window-education" data-app="education">
@@ -211,90 +242,104 @@
       <div class="window-title">Projets</div>
     </div>
     <div class="window-body">
-      <div class="project">
-        <h3>Okane</h3>
-        <img class="project-image" src="pic/projects/okane.png" alt="Capture d'écran du projet Okane" loading="lazy" />
-        <p>Application de gestion financière. Conception d'une application numérique dédiée au suivi et à la gestion des finances personnelles et à l'étude de faisabilité d'un projet.</p>
-      </div>
-      <hr />
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/okane.png" alt="Capture d'écran du projet Okane" loading="lazy" />
+          </div>
+          <h3>Okane</h3>
+          <p>Application de gestion financière. Conception d'une application numérique dédiée au suivi et à la gestion des finances personnelles et à l'étude de faisabilité d'un projet.</p>
+        </div>
 
-      <div class="project">
-        <h3>Benkyō</h3>
-        <img class="project-image" src="pic/projects/benkyo.png" alt="Capture d'écran du projet Benkyō" loading="lazy" />
-        <p>Application d'apprentissage combinant productivité, apprentissage et assistant IA (Benkyō IA) afin d'accompagner l'utilisateur dans son parcours.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/benkyo.png" alt="Capture d'écran du projet Benkyō" loading="lazy" />
+          </div>
+          <h3>Benkyō</h3>
+          <p>Application d'apprentissage combinant productivité, apprentissage et assistant IA (Benkyō IA) afin d'accompagner l'utilisateur dans son parcours.</p>
+        </div>
 
-      <div class="project">
-        <h3>EXPEDITION</h3>
-        <img class="project-image" src="pic/projects/expedition.png" alt="Capture d'écran du projet Expedition" loading="lazy" />
-        <p>PWA à esthétique HUD sombre cyan : interface de commande de mission avec radar de ciblage animé, panneau de missions et journal de bord.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/expedition.png" alt="Capture d'écran du projet Expedition" loading="lazy" />
+          </div>
+          <h3>EXPEDITION</h3>
+          <p>PWA à esthétique HUD sombre cyan : interface de commande de mission avec radar de ciblage animé, panneau de missions et journal de bord.</p>
+        </div>
 
-      <div class="project">
-        <h3>SHALOM</h3>
-        <img class="project-image" src="pic/projects/shalom.png" alt="Capture d'écran du projet Shalom" loading="lazy" />
-        <p>PWA chrétienne avec esthétique Liquid Glass : Bible, prière, méditation, parcours 40 jours, journal spirituel et bibliothèque thématique.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/shalom.png" alt="Capture d'écran du projet Shalom" loading="lazy" />
+          </div>
+          <h3>SHALOM</h3>
+          <p>PWA chrétienne avec esthétique Liquid Glass : Bible, prière, méditation, parcours 40 jours, journal spirituel et bibliothèque thématique.</p>
+        </div>
 
-      <div class="project">
-        <h3>StrawBunny</h3>
-        <img class="project-image" src="pic/projects/strawbunny.png" alt="Capture d'écran du projet StrawBunny" loading="lazy" />
-        <p>PWA mobile-first de bien-être quotidien, avec système de progression et de récompenses.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/strawbunny.png" alt="Capture d'écran du projet StrawBunny" loading="lazy" />
+          </div>
+          <h3>StrawBunny</h3>
+          <p>PWA mobile-first de bien-être quotidien, avec système de progression et de récompenses.</p>
+        </div>
 
-      <div class="project">
-        <h3>État-Major Personnel</h3>
-        <img class="project-image" src="pic/projects/etat-major-personnel.png" alt="Capture d'écran du projet État-Major Personnel" loading="lazy" />
-        <p>Centre de commande personnel. Non déployé pour le moment.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/etat-major-personnel.png" alt="Capture d'écran du projet État-Major Personnel" loading="lazy" />
+          </div>
+          <h3>État-Major Personnel</h3>
+          <p>Centre de commande personnel. Non déployé pour le moment.</p>
+        </div>
 
-      <div class="project">
-        <h3>Koro Bot (fork de Discord-Bot-TypeScript-Template)</h3>
-        <img class="project-image" src="pic/projects/koro-bot.png" alt="Capture d'écran du projet Koro Bot" loading="lazy" />
-        <p>Bot Discord personnalisé, déployé et exécuté directement depuis un environnement mobile via Termux.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/koro-bot.png" alt="Capture d'écran du projet Koro Bot" loading="lazy" />
+          </div>
+          <h3>Koro Bot (fork de Discord-Bot-TypeScript-Template)</h3>
+          <p>Bot Discord personnalisé, déployé et exécuté directement depuis un environnement mobile via Termux.</p>
+        </div>
 
-      <div class="project">
-        <h3>Praetorium</h3>
-        <img class="project-image" src="pic/projects/praetorium.png" alt="Capture d'écran du projet Praetorium" loading="lazy" />
-        <p>Projet personnel en cours de finalisation.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/praetorium.png" alt="Capture d'écran du projet Praetorium" loading="lazy" />
+          </div>
+          <h3>Praetorium</h3>
+          <p>Projet personnel en cours de finalisation.</p>
+        </div>
 
-      <div class="project">
-        <h3>Tsukuri.Box</h3>
-        <img class="project-image" src="pic/projects/tsukuri-box.png" alt="Capture d'écran du projet Tsukuri.Box" loading="lazy" />
-        <p>Bibliothèque personnelle de templates et sources de sites, présentée comme un explorateur de fichiers pour développeur.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/tsukuri-box.png" alt="Capture d'écran du projet Tsukuri.Box" loading="lazy" />
+          </div>
+          <h3>Tsukuri.Box</h3>
+          <p>Bibliothèque personnelle de templates et sources de sites, présentée comme un explorateur de fichiers pour développeur.</p>
+        </div>
 
-      <div class="project">
-        <h3>Comment pourrir sa vie</h3>
-        <img class="project-image" src="pic/projects/comment-pourrir-sa-vie.png" alt="Capture d'écran du projet Comment pourrir sa vie" loading="lazy" />
-        <p>Projet personnel en cours de finalisation.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/comment-pourrir-sa-vie.png" alt="Capture d'écran du projet Comment pourrir sa vie" loading="lazy" />
+          </div>
+          <h3>Comment pourrir sa vie</h3>
+          <p>Projet personnel en cours de finalisation.</p>
+        </div>
 
-      <div class="project">
-        <h3>Kage RPG</h3>
-        <img class="project-image" src="pic/projects/kage-rpg.png" alt="Capture d'écran du projet Kage RPG" loading="lazy" />
-        <p>Projet personnel en cours de finalisation.</p>
-      </div>
-      <hr />
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/kage-rpg.png" alt="Capture d'écran du projet Kage RPG" loading="lazy" />
+          </div>
+          <h3>Kage RPG</h3>
+          <p>Projet personnel en cours de finalisation.</p>
+        </div>
 
-      <div class="project">
-        <h3>DRG Card — Carte de visite virtuelle</h3>
-        <img class="project-image" src="pic/projects/drg-card.png" alt="Capture d'écran de la carte de visite virtuelle DRG Card" loading="lazy" />
-        <p>Carte de visite virtuelle interactive.</p>
-        <a class="btn-link" href="https://aeffbe0d.daniel-gracy-vcard.pages.dev/" target="_blank">Voir la carte</a>
+        <div class="project">
+          <div class="project-shot">
+            <img class="project-image" src="pic/projects/drg-card.png" alt="Capture d'écran de la carte de visite virtuelle DRG Card" loading="lazy" />
+          </div>
+          <h3>DRG Card — Carte de visite virtuelle</h3>
+          <p>Carte de visite virtuelle interactive.</p>
+          <a class="btn-link" href="https://aeffbe0d.daniel-gracy-vcard.pages.dev/" target="_blank">Voir la carte</a>
+        </div>
       </div>
-
     </div>
   </div>
 
