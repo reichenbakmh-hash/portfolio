@@ -67,6 +67,11 @@ document.querySelectorAll(".desktop-icon").forEach((icon) => {
   });
 });
 
+document.getElementById("desktop").addEventListener("click", (e) => {
+  if (e.target.closest(".desktop-icon")) return;
+  document.querySelectorAll(".desktop-icon").forEach((i) => i.classList.remove("selected"));
+});
+
 document.querySelectorAll(".dock-icon[data-app]").forEach((icon) => {
   icon.addEventListener("click", () => openApp(icon.dataset.app));
 });
