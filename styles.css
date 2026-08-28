@@ -320,6 +320,16 @@ body {
 }
 
 .project { margin-bottom: 8px; }
+.project-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(23,147,209,0.25);
+  margin: 8px 0;
+  background: #eef2f5;
+}
 .project-image.placeholder {
   height: 130px;
   display: flex;
@@ -333,10 +343,8 @@ body {
     rgba(23,147,209,0.02) 20px
   );
   border: 1px dashed rgba(23,147,209,0.35);
-  border-radius: 8px;
   color: var(--accent);
   font-style: italic;
-  margin: 8px 0;
 }
 
 .btn-link {
