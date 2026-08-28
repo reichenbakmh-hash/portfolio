@@ -142,6 +142,15 @@ document.querySelectorAll(".context-item").forEach((item) => {
   });
 });
 
+document.querySelectorAll(".project-image").forEach((img) => {
+  img.addEventListener("error", () => {
+    const fallback = document.createElement("div");
+    fallback.className = "project-image placeholder";
+    fallback.textContent = "Capture à venir";
+    img.replaceWith(fallback);
+  });
+});
+
 const lockScreen = document.getElementById("lock-screen");
 document.getElementById("dock-power").addEventListener("click", () => {
   lockScreen.classList.add("visible");
