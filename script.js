@@ -4,6 +4,40 @@ window.addEventListener("load", () => {
   }, 1200);
 });
 
+(function spawnStars() {
+  const layer = document.getElementById("stars-layer");
+  if (!layer) return;
+  const count = window.innerWidth < 640 ? 35 : 70;
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = (Math.random() * 3.6).toFixed(2) + "s";
+    star.style.width = star.style.height = (Math.random() < 0.15 ? 3 : 2) + "px";
+    layer.appendChild(star);
+  }
+})();
+
+function burstSparkles(x, y) {
+  const colors = ["#4fb3e8", "#ff8a65", "#eaf6ff", "#1793d1"];
+  for (let i = 0; i < 10; i++) {
+    const p = document.createElement("div");
+    p.className = "sparkle-particle";
+    const size = 4 + Math.random() * 4;
+    p.style.width = p.style.height = size + "px";
+    p.style.left = x + "px";
+    p.style.top = y + "px";
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 40 + Math.random() * 50;
+    p.style.setProperty("--dx", Math.cos(angle) * dist + "px");
+    p.style.setProperty("--dy", Math.sin(angle) * dist + "px");
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 750);
+  }
+}
+
 function updateClocks() {
   const now = new Date();
   const timeStr = now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
@@ -63,6 +97,7 @@ document.querySelectorAll(".desktop-icon").forEach((icon) => {
     document.querySelectorAll(".desktop-icon").forEach((i) => i.classList.remove("selected"));
     icon.classList.add("selected");
     openApp(icon.dataset.app);
+    burstSparkles(e.clientX, e.clientY);
     e.stopPropagation();
   });
 });
@@ -73,8 +108,28 @@ document.getElementById("desktop").addEventListener("click", (e) => {
 });
 
 document.querySelectorAll(".dock-icon[data-app]").forEach((icon) => {
-  icon.addEventListener("click", () => openApp(icon.dataset.app));
+  icon.addEventListener("click", (e) => {
+    openApp(icon.dataset.app);
+    const rect = icon.getBoundingClientRect();
+    burstSparkles(rect.left + rect.width / 2, rect.top);
+  });
 });
+
+const mascotWidget = document.getElementById("mascot-widget");
+const mascotBubble = document.getElementById("mascot-bubble");
+const mascotLines = [
+  "Salut, moi c'est Flipper 👋 Bienvenue sur le portfolio de Gracy !",
+  "Psst, va jeter un œil aux projets 👀",
+  "N'hésite pas à télécharger le CV 📄",
+  "Un café et du code, la recette parfaite ☕",
+];
+if (mascotWidget && mascotBubble) {
+  mascotWidget.addEventListener("click", () => {
+    mascotBubble.textContent = mascotLines[Math.floor(Math.random() * mascotLines.length)];
+    mascotWidget.classList.add("show-bubble");
+    setTimeout(() => mascotWidget.classList.remove("show-bubble"), 2200);
+  });
+}
 
 document.querySelectorAll(".tl-close").forEach((btn) => {
   btn.addEventListener("click", (e) => {
