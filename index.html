@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Gracy Razafinjaka Rabary — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-logo">DGR</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+    <div class="boot-text">Chargement du bureau…</div>
+  </div>
+
+  <div id="lock-screen">
+    <div class="lock-clock" id="lock-clock"></div>
+    <div class="lock-date" id="lock-date"></div>
+    <button id="unlock-btn">
+      <img src="pic/lock.svg" alt="" />
+      Déverrouiller
+    </button>
+  </div>
+
+  <div class="wip-badge">Portfolio en construction</div>
+
+  <div class="menu-bar">
+    <div class="menu-left">
+      <span class="menu-logo">DGR</span>
+      <span class="menu-item">Portfolio</span>
+      <span class="menu-item">Fichier</span>
+      <span class="menu-item">Affichage</span>
+      <span class="menu-item">Aide</span>
+    </div>
+    <div class="menu-right">
+      <span class="menu-status">Wi‑Fi</span>
+      <span class="menu-status">100%</span>
+      <span class="menu-clock" id="menu-clock"></span>
+    </div>
+  </div>
+
+  <div class="desktop" id="desktop">
+    <div class="desktop-icon" data-app="skills">
+      <img src="pic/icon2.svg" alt="" />
+      <span>Compétences</span>
+    </div>
+    <div class="desktop-icon" data-app="experience">
+      <img src="pic/experience.svg" alt="" />
+      <span>Expérience</span>
+    </div>
+    <div class="desktop-icon" data-app="education">
+      <img src="pic/education.svg" alt="" />
+      <span>Formation</span>
+    </div>
+    <div class="desktop-icon" data-app="projects">
+      <img src="pic/projects.svg" alt="" />
+      <span>Projets</span>
+    </div>
+    <div class="desktop-icon" data-app="resume">
+      <img src="pic/resume.svg" alt="" />
+      <span>CV.pdf</span>
+    </div>
+  </div>
+
+  <div class="context-menu" id="context-menu">
+    <div class="context-item" data-action="refresh">Actualiser le bureau</div>
+    <div class="context-item" data-action="arrange">Réorganiser les icônes</div>
+    <div class="context-item" data-action="about">À propos de ce portfolio</div>
+  </div>
+
+  <div class="dock">
+    <div class="dock-icon" data-app="skills" title="Compétences">
+      <img src="pic/icon2.svg" alt="Compétences" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-icon" data-app="email" title="Email">
+      <img src="pic/mail.svg" alt="Email" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-icon" data-app="experience" title="Expérience">
+      <img src="pic/experience.svg" alt="Expérience" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-icon" data-app="education" title="Formation">
+      <img src="pic/education.svg" alt="Formation" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-icon" data-app="projects" title="Projets">
+      <img src="pic/projects.svg" alt="Projets" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-icon" data-app="resume" title="CV">
+      <img src="pic/resume.svg" alt="CV" />
+      <span class="dock-dot"></span>
+    </div>
+    <div class="dock-sep"></div>
+    <div class="dock-icon" id="dock-power" title="Verrouiller">
+      <img src="pic/power.svg" alt="Verrouiller" />
+    </div>
+  </div>
+
+  <div class="window" id="window-education" data-app="education">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="education"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">Formation</div>
+    </div>
+    <div class="window-body">
+      <h3>Master Finance</h3>
+      <p class="muted">Institut de Management des Arts et des Métiers (IMGAM) — En cours</p>
+      <hr />
+      <h3>Licence Finance et Comptabilité</h3>
+      <p class="muted">Institut de Management des Arts et des Métiers (IMGAM) — 2025</p>
+      <hr />
+      <h3>Baccalauréat A2</h3>
+      <p class="muted">EducPlus — 2022</p>
+    </div>
+  </div>
+
+  <div class="window" id="window-experience" data-app="experience">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="experience"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">Expérience</div>
+    </div>
+    <div class="window-body">
+      <h3>Concentrix × Orange France</h3>
+      <p class="muted">Conseiller Technique Haut Débit → Conseiller Technique Service Universel | Janvier – Juillet 2026</p>
+
+      <p><strong>Conseiller Technique Haut Débit</strong> — Janvier à Avril 2026</p>
+      <ul>
+        <li>Diagnostic et résolution d'incidents sur les offres ADSL, Fibre, Orange TV, téléphonie et VoIP/ToIP</li>
+        <li>Assistance technique sur Livebox, décodeurs et services multimédias, avec qualification et suivi des incidents jusqu'à résolution</li>
+        <li>Gestion des demandes de facturation, remboursements et dédommagements via les outils CRM</li>
+        <li>Accompagnement client sur des problématiques techniques complexes, incluant des cas sensibles de compromission de compte liés aux adresses mail Orange</li>
+      </ul>
+
+      <p><strong>Conseiller Technique Service Universel</strong> — Avril à Juillet 2026 <em>(promotion interne)</em></p>
+      <ul>
+        <li>Prise en charge spécialisée des lignes fixes, VoIP et continuité de service</li>
+        <li>Analyse et traitement de dossiers techniques complexes, avec coordination inter-équipes pour le suivi des incidents</li>
+        <li>Gestion des demandes de rétablissement et de dédommagement</li>
+      </ul>
+
+      <hr />
+      <h3>ONG Colline Verte</h3>
+      <p class="muted">Bénévole — 2022</p>
+      <ul>
+        <li>Gestion, collecte et mise à jour des informations relatives aux bénéficiaires, donateurs et partenaires</li>
+        <li>Organisation, classement et fiabilisation des données</li>
+        <li>Gestion des demandes et contribution au maintien des relations avec les parties prenantes</li>
+        <li>Sensibilisation du public aux enjeux et projets de l'organisation</li>
+        <li>Création de supports de communication : flyers, affiches et contenus visuels</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="window" id="window-skills" data-app="skills">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="skills"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">Compétences</div>
+    </div>
+    <div class="window-body">
+      <h4>Finance et comptabilité</h4>
+      <p>Analyse financière • Audit interne • Gestion comptable • Contrôle de gestion • Gestion financière • Gestion des approvisionnements et des stocks • Passation des marchés</p>
+      <hr />
+      <h4>Support technique et systèmes</h4>
+      <p>Diagnostic technique • Gestion d'incidents • ADSL • Fibre • Livebox • Orange TV • Décodeurs Orange • VoIP • ToIP • Téléphonie fixe • Messagerie Orange • Relation client</p>
+      <hr />
+      <h4>Outils professionnels</h4>
+      <p>CRM Orange • CRM GP • Pulse (suivi des KPI) • Workday • Microsoft Teams • Microsoft Excel • Microsoft Word • Microsoft Access</p>
+      <hr />
+      <h4>Logiciels de gestion</h4>
+      <p>Sage 100 Comptabilité • Sage 100 Gestion Commerciale • Dext • Full Ibiza • Odoo</p>
+      <hr />
+      <h4>Développement et technologies web</h4>
+      <p>HTML • CSS • JavaScript • TypeScript • React • Next.js • Node.js • Python • Tailwind CSS • Git • GitHub • Supabase • Vercel • Cloudflare</p>
+      <hr />
+      <h4>Cybersécurité</h4>
+      <p>Kali Linux • Reconnaissance • Audit de sécurité • Pentesting (formation)</p>
+      <hr />
+      <h4>Langues</h4>
+      <p>Malagasy (langue maternelle) • Français (courant) • Anglais (B1) • Espagnol (A2) • Japonais (N5)</p>
+    </div>
+  </div>
+
+  <div class="window" id="window-projects" data-app="projects">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="projects"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">Projets</div>
+    </div>
+    <div class="window-body">
+      <p class="wip-note">Section en cours de construction — captures ajoutées au fur et à mesure.</p>
+
+      <div class="project">
+        <h3>Okane</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/okane.png">Capture à venir</div>
+        <p>Application de gestion financière. Conception d'une application numérique dédiée au suivi et à la gestion des finances personnelles et à l'étude de faisabilité d'un projet.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Benkyō</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/benkyo.png">Capture à venir</div>
+        <p>Application d'apprentissage combinant productivité, apprentissage et assistant IA (Benkyō IA) afin d'accompagner l'utilisateur dans son parcours.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>EXPEDITION</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/expedition.png">Capture à venir</div>
+        <p>PWA à esthétique HUD sombre cyan : interface de commande de mission avec radar de ciblage animé, panneau de missions et journal de bord.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>SHALOM</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/shalom.png">Capture à venir</div>
+        <p>PWA chrétienne avec esthétique Liquid Glass : Bible, prière, méditation, parcours 40 jours, journal spirituel et bibliothèque thématique.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>StrawBunny</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/strawbunny.png">Capture à venir</div>
+        <p>PWA mobile-first de bien-être quotidien, avec système de progression et de récompenses.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>QG — Personal Command Center</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/qg-command-center.png">Capture à venir</div>
+        <p>Non déployé pour le moment.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Koro Bot (fork de Discord-Bot-TypeScript-Template)</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/koro-bot.png">Capture à venir</div>
+        <p>Bot Discord personnalisé, déployé et exécuté directement depuis un environnement mobile via Termux.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Praetorium</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/praetorium.png">Capture à venir</div>
+        <p></p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>État-Major Personnel</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/etat-major-personnel.png">Capture à venir</div>
+        <p></p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Tsukuri.Box</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/tsukuri-box.png">Capture à venir</div>
+        <p>Bibliothèque personnelle de templates et sources de sites, présentée comme un explorateur de fichiers pour développeur.</p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Comment pourrir sa vie</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/comment-pourrir-sa-vie.png">Capture à venir</div>
+        <p></p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>Kage RPG</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/kage-rpg.png">Capture à venir</div>
+        <p></p>
+      </div>
+      <hr />
+
+      <div class="project">
+        <h3>DRG Card — Carte de visite virtuelle</h3>
+        <div class="project-image placeholder" data-filename="pic/projects/drg-card.png">Capture à venir</div>
+        <p>Carte de visite virtuelle interactive.</p>
+        <a class="btn-link" href="https://aeffbe0d.daniel-gracy-vcard.pages.dev/" target="_blank">Voir la carte</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="window" id="window-resume" data-app="resume">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="resume"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">CV.pdf</div>
+    </div>
+    <div class="window-body window-body-center">
+      <img src="pic/resume.svg" alt="" class="big-icon" />
+      <p>Le CV n'est pas encore chargé sur cette page.</p>
+      <a class="btn-link" href="cv.pdf" target="_blank">Ouvrir cv.pdf</a>
+    </div>
+  </div>
+
+  <div class="window" id="window-about" data-app="about">
+    <div class="window-titlebar">
+      <div class="traffic-lights">
+        <span class="tl tl-close" data-close="about"></span>
+        <span class="tl tl-min"></span>
+        <span class="tl tl-max"></span>
+      </div>
+      <div class="window-title">À propos</div>
+    </div>
+    <div class="window-body">
+      <p>Portfolio de Razafinjaka Rabary Daniel Gracy.</p>
+      <p class="muted">Étudiant en Master Finance, expérience en support technique chez Concentrix × Orange France, profil polyvalent finance / tech.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
