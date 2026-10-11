@@ -42,3 +42,36 @@ links.forEach((_, id) => {
   const section = document.getElementById(id);
   if (section) observer.observe(section);
 });
+
+const revealObserver = new IntersectionObserver(
+  (entries, observerRef) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observerRef.unobserve(entry.target);
+    });
+  },
+  { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const copyButton = document.querySelector("[data-copy]");
+const copyStatus = document.querySelector(".copy-status");
+
+if (copyButton && navigator.clipboard) {
+  copyButton.hidden = false;
+  let resetTimer;
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(copyButton.dataset.copy);
+      copyStatus.textContent = "Adresse copiée dans le presse-papiers.";
+    } catch {
+      copyStatus.textContent = "Copie impossible, utilisez le bouton d'écriture.";
+    }
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      copyStatus.textContent = "";
+    }, 3000);
+  });
+}

@@ -17,7 +17,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -45,8 +45,8 @@
     <section id="accueil" class="hero" aria-labelledby="titre-accueil">
       <div class="wrap">
         <h1 id="titre-accueil">
-          <span>Daniel Gracy</span>
-          <span>Razafinjaka Rabary</span>
+          <span class="given">Daniel Gracy</span>
+          <span class="family">Razafinjaka Rabary</span>
         </h1>
         <p class="positioning">Finance · Opérations · Produits numériques</p>
 
@@ -62,15 +62,15 @@
 
           <dl class="axes">
             <div>
-              <dt>Finance</dt>
+              <dt><a href="#formation">Finance</a></dt>
               <dd>Licence en Finance et Comptabilité (2025), Master Finance en cours à l'IMGAM.</dd>
             </div>
             <div>
-              <dt>Opérations</dt>
+              <dt><a href="#experience">Opérations</a></dt>
               <dd>Support technique et relation client chez Concentrix × Orange France, de janvier à juillet 2026.</dd>
             </div>
             <div>
-              <dt>Produits numériques</dt>
+              <dt><a href="#projets">Produits numériques</a></dt>
               <dd>Applications web de gestion financière, d'apprentissage et d'organisation.</dd>
             </div>
           </dl>
@@ -82,11 +82,21 @@
       <div class="wrap section-grid">
         <div class="section-head">
           <h2 id="titre-projets">Projets</h2>
+          <ul class="subnav" aria-label="Accès rapide aux projets">
+            <li><a href="#okane">Okane</a></li>
+            <li><a href="#benkyo">Benkyō</a></li>
+            <li><a href="#tsukuri-box">Tsukuri.Box</a></li>
+            <li><a href="#shalom">Shalom</a></li>
+          </ul>
         </div>
         <div class="section-body">
           <p class="lead">Quatre applications conçues pour des usages précis. L'état de chacune est indiqué : aucune n'est présentée comme un produit terminé.</p>
 
-          <article class="project">
+          <article class="project reveal" id="okane" style="--tint: #d7e5dd">
+            <figure class="project-visual">
+              <img src="pic/projects/okane.webp" width="520" height="1119" loading="lazy" decoding="async" alt="Menu de navigation de l'application Okane : tableau de bord, comptes, budget, événements, calendrier, faisabilité et assistant IA">
+            </figure>
+
             <div class="project-text">
               <h3>Okane</h3>
               <p class="project-goal">Application de suivi des finances personnelles et d'étude de faisabilité d'un projet.</p>
@@ -105,12 +115,13 @@
                 </div>
               </dl>
             </div>
-            <figure class="project-shot">
-              <img src="pic/projects/okane.webp" width="520" height="1119" loading="lazy" decoding="async" alt="Menu de navigation de l'application Okane : tableau de bord, comptes, budget, événements, calendrier, faisabilité et assistant IA">
-            </figure>
           </article>
 
-          <article class="project">
+          <article class="project reveal" id="benkyo" style="--tint: #d9e1ee">
+            <figure class="project-visual">
+              <img src="pic/projects/benkyo.webp" width="520" height="1082" loading="lazy" decoding="async" alt="Menu de navigation de l'application Benkyō : matières, devoirs, objectifs, notions, planning, progression et assistant IA">
+            </figure>
+
             <div class="project-text">
               <h3>Benkyō</h3>
               <p class="project-goal">Application d'apprentissage qui réunit productivité, suivi d'études et assistant IA.</p>
@@ -133,12 +144,13 @@
                 </div>
               </dl>
             </div>
-            <figure class="project-shot">
-              <img src="pic/projects/benkyo.webp" width="520" height="1082" loading="lazy" decoding="async" alt="Menu de navigation de l'application Benkyō : matières, devoirs, objectifs, notions, planning, progression et assistant IA">
-            </figure>
           </article>
 
-          <article class="project">
+          <article class="project reveal" id="tsukuri-box" style="--tint: #dcdfe2">
+            <figure class="project-visual">
+              <img src="pic/projects/tsukuri-box.webp" width="520" height="1117" loading="lazy" decoding="async" alt="Bibliothèque de modèles Tsukuri.Box avec recherche, catégories et fiches de modèles">
+            </figure>
+
             <div class="project-text">
               <h3>Tsukuri.Box</h3>
               <p class="project-goal">Bibliothèque personnelle de modèles de sites web, présentée comme un explorateur de fichiers.</p>
@@ -161,12 +173,13 @@
                 </div>
               </dl>
             </div>
-            <figure class="project-shot">
-              <img src="pic/projects/tsukuri-box.webp" width="520" height="1117" loading="lazy" decoding="async" alt="Bibliothèque de modèles Tsukuri.Box avec recherche, catégories et fiches de modèles">
-            </figure>
           </article>
 
-          <article class="project">
+          <article class="project reveal" id="shalom" style="--tint: #dde3e8">
+            <figure class="project-visual">
+              <img src="pic/projects/shalom.webp" width="520" height="1103" loading="lazy" decoding="async" alt="Menu de navigation de l'application Shalom : accueil, la Parole, prière, méditation, parcours et journal">
+            </figure>
+
             <div class="project-text">
               <h3>Shalom</h3>
               <p class="project-goal">Application de vie spirituelle chrétienne : lecture, prière et suivi personnel.</p>
@@ -189,9 +202,6 @@
                 </div>
               </dl>
             </div>
-            <figure class="project-shot">
-              <img src="pic/projects/shalom.webp" width="520" height="1103" loading="lazy" decoding="async" alt="Menu de navigation de l'application Shalom : accueil, la Parole, prière, méditation, parcours et journal">
-            </figure>
           </article>
         </div>
       </div>
@@ -201,12 +211,16 @@
       <div class="wrap section-grid">
         <div class="section-head">
           <h2 id="titre-parcours">Parcours</h2>
+          <ul class="subnav" aria-label="Accès rapide au parcours">
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#formation">Formation</a></li>
+          </ul>
         </div>
         <div class="section-body">
           <p class="lead">Du plus ancien au plus récent. Chez Concentrix × Orange France, je suis passé du diagnostic d'incidents sur les offres internet, TV et téléphonie à la prise en charge de dossiers techniques complexes avec coordination inter-équipes.</p>
 
-          <h3 class="block-title">Expérience</h3>
-          <ol class="journal">
+          <h3 class="block-title" id="experience">Expérience</h3>
+          <ol class="journal reveal">
             <li>
               <p class="period">2022<br>3 mois</p>
               <div>
@@ -220,32 +234,36 @@
               </div>
             </li>
             <li>
-              <p class="period">Janvier – avril 2026</p>
+              <p class="period">2026</p>
               <div>
-                <h4>Conseiller technique Haut Débit, Concentrix × Orange France</h4>
-                <ul>
-                  <li>Diagnostic et résolution d'incidents sur les offres ADSL, Fibre, Orange TV, téléphonie et VoIP/ToIP.</li>
-                  <li>Assistance sur Livebox, décodeurs et services multimédias, avec qualification et suivi jusqu'à la résolution.</li>
-                  <li>Traitement des demandes de facturation, remboursements et dédommagements dans les outils CRM.</li>
-                  <li>Accompagnement de clients sur des cas techniques complexes, dont des compromissions de compte liées aux adresses mail Orange.</li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <p class="period">Avril – juillet 2026</p>
-              <div>
-                <h4>Conseiller technique Service Universel, Concentrix × Orange France</h4>
-                <ul>
-                  <li>Prise en charge spécialisée des lignes fixes, de la VoIP et de la continuité de service.</li>
-                  <li>Analyse et traitement de dossiers techniques complexes, avec coordination inter-équipes pour le suivi des incidents.</li>
-                  <li>Traitement des demandes de rétablissement et de dédommagement.</li>
-                </ul>
+                <h4>Concentrix × Orange France</h4>
+                <ol class="roles">
+                  <li>
+                    <p class="period">Janvier – avril</p>
+                    <h5>Conseiller technique Haut Débit</h5>
+                    <ul>
+                      <li>Diagnostic et résolution d'incidents sur les offres ADSL, Fibre, Orange TV, téléphonie et VoIP/ToIP.</li>
+                      <li>Assistance sur Livebox, décodeurs et services multimédias, avec qualification et suivi jusqu'à la résolution.</li>
+                      <li>Traitement des demandes de facturation, remboursements et dédommagements dans les outils CRM.</li>
+                      <li>Accompagnement de clients sur des cas techniques complexes, dont des compromissions de compte liées aux adresses mail Orange.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="period">Avril – juillet</p>
+                    <h5>Conseiller technique Service Universel</h5>
+                    <ul>
+                      <li>Prise en charge spécialisée des lignes fixes, de la VoIP et de la continuité de service.</li>
+                      <li>Analyse et traitement de dossiers techniques complexes, avec coordination inter-équipes pour le suivi des incidents.</li>
+                      <li>Traitement des demandes de rétablissement et de dédommagement.</li>
+                    </ul>
+                  </li>
+                </ol>
               </div>
             </li>
           </ol>
 
-          <h3 class="block-title">Formation</h3>
-          <ol class="journal">
+          <h3 class="block-title" id="formation">Formation</h3>
+          <ol class="journal reveal">
             <li>
               <p class="period">2022</p>
               <div>
@@ -280,46 +298,98 @@
         <div class="section-body">
           <p class="lead">Les compétences pratiquées sont séparées des simples notions. Aucun niveau chiffré : chaque ligne correspond à un usage réel, professionnel ou personnel.</p>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Finance et gestion</h3>
-            <dl class="facts">
+            <div class="skill-cols">
               <div>
-                <dt>Pratiqué</dt>
-                <dd>Analyse financière, audit interne, gestion comptable, contrôle de gestion, gestion financière, gestion des approvisionnements et des stocks, passation des marchés, Sage 100 Gestion Commerciale, Dext, Full Ibiza.</dd>
+                <h4>Pratiqué</h4>
+                <ul class="skill-list">
+                  <li>Analyse financière</li>
+                  <li>Audit interne</li>
+                  <li>Gestion comptable</li>
+                  <li>Contrôle de gestion</li>
+                  <li>Gestion financière</li>
+                  <li>Approvisionnements et stocks</li>
+                  <li>Passation des marchés</li>
+                  <li>Sage 100 Gestion Commerciale</li>
+                  <li>Dext</li>
+                  <li>Full Ibiza</li>
+                </ul>
               </div>
               <div>
-                <dt>Notions</dt>
-                <dd>Sage 100 Comptabilité, Odoo.</dd>
+                <h4>Notions</h4>
+                <ul class="skill-list">
+                  <li>Sage 100 Comptabilité</li>
+                  <li>Odoo</li>
+                </ul>
               </div>
-            </dl>
+            </div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Opérations et systèmes</h3>
-            <dl class="facts">
+            <div class="skill-cols single">
               <div>
-                <dt>Pratiqué</dt>
-                <dd>Diagnostic technique, gestion d'incidents, relation client, offres ADSL et Fibre, Livebox, Orange TV et décodeurs, VoIP/ToIP et téléphonie fixe, messagerie Orange, vente et activation d'Orange Cybersecure, CRM Orange, CRM GP, Pulse (suivi des KPI), Workday, Microsoft Teams, Excel, Word et Access.</dd>
+                <h4>Pratiqué</h4>
+                <ul class="skill-list">
+                  <li>Diagnostic technique</li>
+                  <li>Gestion d'incidents</li>
+                  <li>Relation client</li>
+                  <li>Offres ADSL et Fibre</li>
+                  <li>Livebox</li>
+                  <li>Orange TV et décodeurs</li>
+                  <li>VoIP/ToIP et téléphonie fixe</li>
+                  <li>Messagerie Orange</li>
+                  <li>Vente et activation d'Orange Cybersecure</li>
+                  <li>CRM Orange</li>
+                  <li>CRM GP</li>
+                  <li>Pulse (suivi des KPI)</li>
+                  <li>Workday</li>
+                  <li>Microsoft Teams</li>
+                  <li>Excel, Word, Access</li>
+                </ul>
               </div>
-            </dl>
+            </div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group reveal">
             <h3>Développement et outils numériques</h3>
-            <dl class="facts">
+            <div class="skill-cols">
               <div>
-                <dt>Pratiqué</dt>
-                <dd>HTML, CSS, JavaScript, Git et GitHub, Supabase, Vercel, Cloudflare.</dd>
+                <h4>Pratiqué</h4>
+                <ul class="skill-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Git et GitHub</li>
+                  <li>Supabase</li>
+                  <li>Vercel</li>
+                  <li>Cloudflare</li>
+                </ul>
               </div>
               <div>
-                <dt>Notions</dt>
-                <dd>TypeScript, React, Next.js, Node.js, Python, Tailwind CSS.</dd>
+                <h4>Notions</h4>
+                <ul class="skill-list">
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>Next.js</li>
+                  <li>Node.js</li>
+                  <li>Python</li>
+                  <li>Tailwind CSS</li>
+                </ul>
               </div>
+            </div>
+            <div class="skill-cols single">
               <div>
-                <dt>En formation</dt>
-                <dd>Cybersécurité : Kali Linux, reconnaissance, audit de sécurité, tests d'intrusion.</dd>
+                <h4>En formation : cybersécurité</h4>
+                <ul class="skill-list">
+                  <li>Kali Linux</li>
+                  <li>Reconnaissance</li>
+                  <li>Audit de sécurité</li>
+                  <li>Tests d'intrusion</li>
+                </ul>
               </div>
-            </dl>
+            </div>
           </div>
         </div>
       </div>
@@ -363,8 +433,11 @@
           <p class="email"><a href="mailto:gracydanielrr@gmail.com">gracydanielrr@gmail.com</a></p>
           <div class="actions">
             <a class="button" href="mailto:gracydanielrr@gmail.com">Écrire un e-mail</a>
-            <a class="button button-outline" href="CV_Razafinjaka_Gracy.pdf" download>Télécharger le CV (PDF)</a>
+            <button class="button button-outline" type="button" data-copy="gracydanielrr@gmail.com" hidden>Copier l'adresse</button>
+            <a class="button button-outline" href="CV_Razafinjaka_Gracy.pdf" download>Télécharger le CV</a>
           </div>
+          <p class="copy-status" role="status" aria-live="polite"></p>
+          <p class="cv-view"><a href="CV_Razafinjaka_Gracy.pdf" target="_blank" rel="noopener">Ouvrir le CV dans le navigateur</a></p>
         </div>
       </div>
     </section>
