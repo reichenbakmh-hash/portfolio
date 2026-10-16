@@ -75,3 +75,17 @@ if (copyButton && navigator.clipboard) {
     }, 3000);
   });
 }
+
+if (window.parent !== window) {
+  const forward = (type, build) => {
+    document.addEventListener(type, (event) => {
+      window.parent.postMessage({ type, ...build(event) }, window.location.origin);
+    });
+  };
+
+  forward("mousemove", (event) => ({ clientX: event.clientX, clientY: event.clientY }));
+  forward("mousedown", () => ({}));
+  forward("mouseup", () => ({}));
+  forward("keydown", (event) => ({ key: event.key }));
+  forward("keyup", (event) => ({ key: event.key }));
+}
