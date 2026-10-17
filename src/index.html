@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>
     (function () {
@@ -12,12 +13,12 @@
         (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
       );
       if (window.innerWidth < 768 || !hasWebGL) {
-        window.location.replace('/os/index.html');
+        window.location.replace('/');
       }
     })();
   </script>
   <noscript>
-    <meta http-equiv="refresh" content="0; url=/os/index.html" />
+    <meta http-equiv="refresh" content="0; url=/" />
   </noscript>
   <style>
     body {
@@ -63,6 +64,24 @@
 
     }
 
+    #back-2d {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 10000;
+      padding: 8px 14px;
+      font: 500 13px/1.2 system-ui, sans-serif;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+
+    #back-2d:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
     #css {
       cursor: pointer;
     }
@@ -104,6 +123,7 @@
 </head>
 
 <body>
+  <a id="back-2d" href="/">Version 2D</a>
   <div id="css"></div>
   <div id="webgl"></div>
   <div id="overlay"></div>

@@ -89,3 +89,12 @@ if (window.parent !== window) {
   forward("keydown", (event) => ({ key: event.key }));
   forward("keyup", (event) => ({ key: event.key }));
 }
+
+const threeDLink = document.querySelector("[data-3d]");
+if (threeDLink && window.self === window.top) {
+  const probe = document.createElement("canvas");
+  const hasWebGL = Boolean(
+    window.WebGLRenderingContext && (probe.getContext("webgl") || probe.getContext("experimental-webgl"))
+  );
+  if (hasWebGL && window.innerWidth >= 768) threeDLink.hidden = false;
+}

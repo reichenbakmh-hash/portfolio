@@ -175,7 +175,7 @@ export default class MonitorScreen extends EventEmitter {
             }
         };
 
-        iframe.src = '/os/index.html';
+        iframe.src = '/index.html';
         iframe.style.width = this.screenSize.width + 'px';
         iframe.style.height = this.screenSize.height + 'px';
         iframe.style.padding = IFRAME_PADDING + 'px';
