@@ -96,5 +96,5 @@ if (threeDLink && window.self === window.top) {
   const hasWebGL = Boolean(
     window.WebGLRenderingContext && (probe.getContext("webgl") || probe.getContext("experimental-webgl"))
   );
-  if (hasWebGL && window.innerWidth >= 768) threeDLink.hidden = false;
+  if (hasWebGL) threeDLink.hidden = false;
 }
