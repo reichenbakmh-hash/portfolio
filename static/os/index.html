@@ -9,7 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -45,7 +45,6 @@
         <div class="hero-grid">
           <div class="hero-text">
             <p>Étudiant en Master Finance à l'IMGAM, j'ai travaillé comme conseiller technique chez Concentrix × Orange France. Je conçois aussi des applications web autour de la gestion, de l'apprentissage et de l'organisation.</p>
-            <p>D'un domaine à l'autre, je pars du problème réel, puis j'organise l'information avant de chercher la solution.</p>
             <div class="actions">
               <a class="button" href="#projets">Découvrir les projets</a>
               <a class="button button-outline" href="CV_Razafinjaka_Gracy.pdf" download>Télécharger le CV</a>
@@ -75,6 +74,7 @@
         <div class="section-head">
           <h2 id="titre-projets">Projets</h2>
           <ul class="subnav" aria-label="Accès rapide aux projets">
+            <li><a href="#compt-aide">Compt'Aide</a></li>
             <li><a href="#okane">Okane</a></li>
             <li><a href="#benkyo">Benkyō</a></li>
             <li><a href="#tsukuri-box">Tsukuri.Box</a></li>
@@ -83,9 +83,38 @@
           </ul>
         </div>
         <div class="section-body">
-          <p class="lead">Quatre projets en détail, puis d'autres plus courts. Pour chacun, j'indique où il en est vraiment.</p>
+          <p class="lead">Cinq projets détaillés, puis des réalisations plus courtes. Chaque fiche indique son état d'avancement.</p>
 
-          <article class="project reveal" id="okane" style="--tint: #d7e5dd">
+          <article class="project" id="compt-aide">
+            <figure class="project-visual">
+              <img src="pic/projects/compt-aide.webp" width="520" height="1090" loading="lazy" decoding="async" alt="Écran Apprendre de l'application Compt'Aide : parcours du collaborateur comptable, comptabilité, Excel, fiscalité française, plan comptable général et jargon comptable">
+            </figure>
+
+            <div class="project-text">
+              <h3>Compt'Aide</h3>
+              <p class="project-goal">Application pour apprendre et pratiquer la comptabilité française, avec une certification à la fin du parcours.</p>
+              <dl class="facts">
+                <div>
+                  <dt>Fonctionnalités</dt>
+                  <dd>Parcours de 24 étapes, leçons de comptabilité, fiscalité française, plan comptable général, jargon comptable et bancaire, leçons Excel avec mini-tableur, assistant IA Compt'AI, attestation de parcours et certificat vérifiable par QR code.</dd>
+                </div>
+                <div>
+                  <dt>Mon rôle</dt>
+                  <dd>Conception et développement.</dd>
+                </div>
+                <div>
+                  <dt>Lien</dt>
+                  <dd><a href="https://comptaide.pages.dev" target="_blank" rel="noopener">comptaide.pages.dev</a></dd>
+                </div>
+                <div>
+                  <dt>État</dt>
+                  <dd><span class="status">Publié</span></dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="project" id="okane">
             <figure class="project-visual">
               <img src="pic/projects/okane.webp" width="520" height="1119" loading="lazy" decoding="async" alt="Menu de navigation de l'application Okane : tableau de bord, comptes, budget, événements, calendrier, faisabilité et assistant IA">
             </figure>
@@ -110,7 +139,7 @@
             </div>
           </article>
 
-          <article class="project reveal" id="benkyo" style="--tint: #d9e1ee">
+          <article class="project" id="benkyo">
             <figure class="project-visual">
               <img src="pic/projects/benkyo.webp" width="520" height="1082" loading="lazy" decoding="async" alt="Menu de navigation de l'application Benkyō : matières, devoirs, objectifs, notions, planning, progression et assistant IA">
             </figure>
@@ -135,7 +164,7 @@
             </div>
           </article>
 
-          <article class="project reveal" id="tsukuri-box" style="--tint: #dcdfe2">
+          <article class="project" id="tsukuri-box">
             <figure class="project-visual">
               <img src="pic/projects/tsukuri-box.webp" width="520" height="1117" loading="lazy" decoding="async" alt="Bibliothèque de modèles Tsukuri.Box avec recherche, catégories et fiches de modèles">
             </figure>
@@ -160,7 +189,7 @@
             </div>
           </article>
 
-          <article class="project reveal" id="shalom" style="--tint: #dde3e8">
+          <article class="project" id="shalom">
             <figure class="project-visual">
               <img src="pic/projects/shalom.webp" width="520" height="1103" loading="lazy" decoding="async" alt="Menu de navigation de l'application Shalom : accueil, la Parole, prière, méditation, parcours et journal">
             </figure>
@@ -187,7 +216,7 @@
 
           <h3 class="block-title more-title" id="autres-projets">Autres réalisations</h3>
           <p class="lead">Des projets personnels plus courts, dont certains sont encore en cours de finalisation.</p>
-          <ul class="more reveal">
+          <ul class="more">
             <li class="more-item">
               <img src="pic/projects/expedition-vignette.webp" width="240" height="300" loading="lazy" decoding="async" alt="Aperçu de l'interface EXPEDITION : radar de ciblage et mission en cours">
               <div>
@@ -244,7 +273,7 @@
                 <p class="more-meta"><span class="status">En cours de finalisation</span></p>
               </div>
             </li>
-          <li class="more-item">
+            <li class="more-item">
 <img src="pic/projects/loeil-vignette.webp" width="240" height="300" loading="lazy" decoding="async" alt="Aperçu de L'OEIL : carte sombre de veille géopolitique centrée sur l'Afrique de l'Est">
 <div>
 <h4>L'OEIL</h4>
@@ -252,7 +281,7 @@
 <p class="more-meta"><span class="status">En développement</span></p>
 </div>
 </li>
-<li class="more-item">
+            <li class="more-item">
 <img src="pic/projects/who-vignette.webp" width="240" height="300" loading="lazy" decoding="async" alt="Aperçu du jeu Who : application Portier signalant un mouvement détecté de nuit par la caméra de la porte d'entrée">
 <div>
 <h4>Who, Les Derniers Échos de Lily</h4>
@@ -260,7 +289,7 @@
 <p class="more-meta"><span class="status">Jouable</span></p>
 </div>
 </li>
-<li class="more-item">
+            <li class="more-item">
 <img src="pic/projects/benkyo-landing-vignette.webp" width="240" height="300" loading="lazy" decoding="async" alt="Aperçu du site de présentation de Benkyō Flow : fonctionnalités, devoirs, notions, Pomodoro et objectifs">
 <div>
 <h4>Benkyō Flow, site de présentation</h4>
@@ -286,7 +315,7 @@
           <p class="lead">Du plus ancien au plus récent. Chez Concentrix × Orange France, je suis passé du dépannage des offres internet, TV et téléphonie aux dossiers techniques complexes, en lien avec d'autres équipes.</p>
 
           <h3 class="block-title" id="experience">Expérience</h3>
-          <ol class="journal reveal">
+          <ol class="journal">
             <li>
               <p class="period">2022<br>3 mois</p>
               <div>
@@ -329,7 +358,7 @@
           </ol>
 
           <h3 class="block-title" id="formation">Formation</h3>
-          <ol class="journal reveal">
+          <ol class="journal">
             <li>
               <p class="period">2022</p>
               <div>
@@ -362,9 +391,9 @@
           <h2 id="titre-competences">Compétences</h2>
         </div>
         <div class="section-body">
-          <p class="lead">J'ai séparé ce que je pratique de ce que je ne connais encore qu'en notions. Pas de niveaux chiffrés : tout ce qui est listé, je m'en suis déjà servi.</p>
+          <p class="lead">Deux niveaux seulement : ce que je pratique, et ce dont je n'ai que des notions. Aucune note chiffrée.</p>
 
-          <div class="skill-group reveal">
+          <div class="skill-group">
             <h3>Finance et gestion</h3>
             <div class="skill-cols">
               <div>
@@ -392,7 +421,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal">
+          <div class="skill-group">
             <h3>Opérations et systèmes</h3>
             <div class="skill-cols single">
               <div>
@@ -418,7 +447,7 @@
             </div>
           </div>
 
-          <div class="skill-group reveal">
+          <div class="skill-group">
             <h3>Développement et outils numériques</h3>
             <div class="skill-cols">
               <div>
@@ -469,7 +498,6 @@
         <div class="section-body about">
           <img class="portrait" src="pic/avatar.jpg" width="500" height="500" loading="lazy" decoding="async" alt="Portrait de Daniel Gracy Razafinjaka Rabary">
           <div class="about-text">
-            <p>J'aime comprendre précisément ce qu'on attend de moi avant de commencer : je clarifie le besoin, j'organise les données, puis je prends l'outil le plus simple qui fait le travail. En finance, au support ou dans mes applications, j'ai le même réflexe : m'assurer que l'information est fiable avant d'agir.</p>
             <dl class="facts">
               <div>
                 <dt>Centres d'intérêt</dt>
